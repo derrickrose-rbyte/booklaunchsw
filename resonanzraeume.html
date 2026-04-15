@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resonanzräume | Stephan Wilk</title>
+    <meta name="description" content="Resonanzräume – Das Buch. Erhältlich im Buchhandel und online.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta property="og:title" content="Resonanzräume | Stephan Wilk">
+    <meta property="og:description" content="Resonanzräume – Das Buch. Erhältlich im Buchhandel und online.">
+    <meta property="og:image" content="/og-image.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stephanwilk.com/resonanzraeume">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="/og-image.png">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="561bd229-eb87-4028-8030-8927486de408"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Tablet Gothic';
+            src: url('fonts/Tablet Gothic W02 Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Tablet Gothic';
+            src: url('fonts/Tablet Gothic W02 SemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Freight Micro Pro';
+            src: url('fonts/FreightMicroProBook-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Freight Micro Pro';
+            src: url('fonts/FreightMicroProBook-Italic.woff2') format('woff2');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Freight Micro Pro';
+            src: url('fonts/FreightMicroProMedium-Regular.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --color-bg: #FAFAF8;
+            --color-text: #1A1A1A;
+            --color-text-secondary: #666666;
+            --color-border: #E5E5E0;
+            --font-headline: 'Tablet Gothic', 'Franklin Gothic Medium', sans-serif;
+            --font-body: 'Freight Micro Pro', Georgia, serif;
+            --space-unit: 1rem;
+            --nav-height: 72px;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #0D0D0D;
+                --color-text: #E8E8E8;
+                --color-text-secondary: #888888;
+                --color-border: #2A2A2A;
+            }
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            line-height: 1.75;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        ::selection { background: var(--color-text); color: var(--color-bg); }
+        a { color: var(--color-text); text-decoration: none; }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-height);
+            background: var(--color-bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .nav-inner {
+            max-width: 100%;
+            height: 100%;
+            padding: 0 calc(var(--space-unit) * 3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: var(--font-headline);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: calc(var(--space-unit) * 2);
+            list-style: none;
+        }
+        .nav-links a {
+            font-family: var(--font-headline);
+            font-size: 0.875rem;
+            letter-spacing: 0.04em;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            padding: 0.25rem 0;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--color-text); }
+
+        main { padding-top: var(--nav-height); min-height: 100vh; }
+        .col-left {
+            position: fixed;
+            top: var(--nav-height);
+            left: 0;
+            width: 50%;
+            height: calc(100vh - var(--nav-height));
+            padding: calc(var(--space-unit) * 6) calc(var(--space-unit) * 4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid var(--color-border);
+        }
+        .col-right {
+            margin-left: 50%;
+            width: 50%;
+            min-height: calc(100vh - var(--nav-height));
+            padding: calc(var(--space-unit) * 6) calc(var(--space-unit) * 4);
+        }
+
+        .page-label {
+            font-family: var(--font-headline);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-text-secondary);
+            margin-bottom: calc(var(--space-unit) * 2);
+        }
+        .intro {
+            font-style: italic;
+        }
+        .divider {
+            width: 48px;
+            height: 1px;
+            background: var(--color-border);
+            margin: calc(var(--space-unit) * 2.5) 0;
+        }
+        .block { margin-bottom: calc(var(--space-unit) * 2.5); }
+        .block p { margin-bottom: calc(var(--space-unit) * 0.5); }
+        .block p:last-child { margin-bottom: 0; }
+        
+        .section-title {
+            font-family: var(--font-headline);
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: calc(var(--space-unit) * 1);
+        }
+        
+        .link-list {
+            list-style: none;
+            margin-bottom: calc(var(--space-unit) * 0.5);
+        }
+        .link-list li {
+            margin-bottom: calc(var(--space-unit) * 0.25);
+        }
+        .link-list a {
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 1px;
+        }
+        .link-list a:hover {
+            border-color: var(--color-text);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.25rem;
+            color: var(--color-text);
+        }
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: currentColor;
+            margin: 5px 0;
+            transition: all 0.2s;
+        }
+
+        @media (max-width: 900px) {
+            .col-left {
+                position: relative;
+                top: auto; left: auto;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--color-border);
+                padding: calc(var(--space-unit) * 4) calc(var(--space-unit) * 2);
+            }
+            .col-right {
+                margin-left: 0;
+                width: 100%;
+                padding: calc(var(--space-unit) * 4) calc(var(--space-unit) * 2);
+            }
+            .nav-inner { padding: 0 calc(var(--space-unit) * 2); }
+            body { font-size: 1.125rem; }
+            .nav-toggle { display: block; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0; right: 0;
+                background: var(--color-bg);
+                border-bottom: 1px solid var(--color-border);
+                flex-direction: column;
+                gap: 0;
+                padding: calc(var(--space-unit) * 1) 0;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links li { width: 100%; }
+            .nav-links a {
+                display: block;
+                font-size: 0.875rem;
+                padding: calc(var(--space-unit) * 0.75) calc(var(--space-unit) * 2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">Stephan Wilk</a>
+            <button class="nav-toggle" aria-label="Menü" onclick="this.nextElementSibling.classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/resonanzraeume" class="active">Resonanzräume</a></li>
+                <li><a href="/ueber-mich">Über mich</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="col-left">
+            <p class="page-label">Resonanzräume</p>
+            
+            <p class="intro">
+                Ich weiß nicht, wo ein Buch beginnt. Vielleicht nicht auf Papier. Vielleicht auch nicht im Schreiben.
+            </p>
+            <p class="intro">
+                Vielleicht dort, wo jemand innehält und einen Gedanken weiterträgt.
+            </p>
+            <p class="intro">
+                Dieses Buch hat keinen festen Ort. Aber es taucht auf.
+            </p>
+            <p class="intro">
+                In Räumen, zwischen anderen Büchern, zwischen Gesprächen, zwischen Menschen, die nicht dasselbe suchen – und doch etwas Ähnliches finden.
+            </p>
+        </div>
+        
+        <div class="col-right">
+            <div class="block">
+                <p class="section-title">Im Raum</p>
+                <p>Das Buch ist im Buchhandel erhältlich.</p>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="block">
+                <p class="section-title">Im Netz</p>
+                <ul class="link-list">
+                    <li><a href="https://buchshop.bod.ch/der-menschliche-faktor-stephan-wilk-9783695717156" target="_blank" rel="noopener">BoD Bookstore</a></li>
+                    <li><a href="https://www.orellfuessli.ch/shop/home/artikeldetails/A1078937516" target="_blank" rel="noopener">Orell Füssli</a></li>
+                    <li><a href="https://www.thalia.de/shop/home/artikeldetails/A1078937516" target="_blank" rel="noopener">Thalia</a></li>
+                    <li><a href="https://www.amazon.de/menschliche-Faktor-Zeiten-Kontrolle-Sicherheit/dp/3695717157/ref=sr_1_1?crid=85KCWHVP6UE5&dib=eyJ2IjoiMSJ9.NUf9gn6yfjgoblB4v98Oth9fR-bvkWKxRZp1Fi65qL1xHNtcoDsCYHI9ChZWJmnLA9Vyg4adacnuQnv-y52_Gvex-5J0SxSJgS7Gf5b9nyvilf1__FSd423EKdo-YE8vlczroi0D43Z-ZJE_o8sZZycD87vAu7atxhbagYO9GJeA3hvUILLHQiM2V8jj97v_uwytO6AQLZFfdVUTmUzOo0u0g4STXGDyfLm23Uh1Eos.I4v79XlT-cQXOisKMGG4KvN8OCs-exClL-QzZRDogio&dib_tag=se&keywords=stephan+wilk&qid=1776083656&sprefix=%2Caps%2C102&sr=8-1" target="_blank" rel="noopener">Amazon</a></li>
+                </ul>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="block">
+                <p class="section-title">Spuren</p>
+                <p>Einige Gedanken haben mich begleitet. Nicht als Antworten. Eher als Richtungen.</p>
+                <ul class="link-list" style="list-style: none;">
+                    <li>Eigenschaftsdualismus</li>
+                    <li>Qualia</li>
+                    <li>Faggin Foundation</li>
+                </ul>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="block">
+                <p class="section-title">Lesungen</p>
+                <p>Es gibt Momente, in denen das Buch den Raum verlässt und Stimme wird.</p>
+                <p>Die nächsten Termine entstehen.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

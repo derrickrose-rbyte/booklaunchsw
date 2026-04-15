@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über mich | Stephan Wilk</title>
+    <meta name="description" content="Stephan Wilk, geboren 1965 in Zürich, arbeitet als strategischer Berater und Creative Director.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta property="og:title" content="Über mich | Stephan Wilk">
+    <meta property="og:description" content="Stephan Wilk, geboren 1965 in Zürich, arbeitet als strategischer Berater und Creative Director.">
+    <meta property="og:image" content="/og-image.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stephanwilk.com/ueber-mich">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="/og-image.png">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="561bd229-eb87-4028-8030-8927486de408"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Tablet Gothic';
+            src: url('fonts/Tablet Gothic W02 Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Tablet Gothic';
+            src: url('fonts/Tablet Gothic W02 SemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Freight Micro Pro';
+            src: url('fonts/FreightMicroProBook-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Freight Micro Pro';
+            src: url('fonts/FreightMicroProBook-Italic.woff2') format('woff2');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Freight Micro Pro';
+            src: url('fonts/FreightMicroProMedium-Regular.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --color-bg: #FAFAF8;
+            --color-text: #1A1A1A;
+            --color-text-secondary: #666666;
+            --color-border: #E5E5E0;
+            --font-headline: 'Tablet Gothic', 'Franklin Gothic Medium', sans-serif;
+            --font-body: 'Freight Micro Pro', Georgia, serif;
+            --space-unit: 1rem;
+            --nav-height: 72px;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #0D0D0D;
+                --color-text: #E8E8E8;
+                --color-text-secondary: #888888;
+                --color-border: #2A2A2A;
+            }
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            line-height: 1.75;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        ::selection { background: var(--color-text); color: var(--color-bg); }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-height);
+            background: var(--color-bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .nav-inner {
+            max-width: 100%;
+            height: 100%;
+            padding: 0 calc(var(--space-unit) * 3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: var(--font-headline);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: calc(var(--space-unit) * 2);
+            list-style: none;
+        }
+        .nav-links a {
+            font-family: var(--font-headline);
+            font-size: 0.875rem;
+            letter-spacing: 0.04em;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            padding: 0.25rem 0;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--color-text); }
+
+        main { padding-top: var(--nav-height); min-height: 100vh; }
+        .col-left {
+            position: fixed;
+            top: var(--nav-height);
+            left: 0;
+            width: 50%;
+            height: calc(100vh - var(--nav-height));
+            padding: calc(var(--space-unit) * 6) calc(var(--space-unit) * 4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid var(--color-border);
+        }
+        .col-right {
+            margin-left: 50%;
+            width: 50%;
+            min-height: calc(100vh - var(--nav-height));
+            padding: calc(var(--space-unit) * 6) calc(var(--space-unit) * 4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .page-label {
+            font-family: var(--font-headline);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-text-secondary);
+            margin-bottom: calc(var(--space-unit) * 2);
+        }
+        .divider {
+            width: 48px;
+            height: 1px;
+            background: var(--color-border);
+            margin: calc(var(--space-unit) * 2.5) 0;
+        }
+        .block { margin-bottom: calc(var(--space-unit) * 2); }
+        .block p { margin-bottom: calc(var(--space-unit) * 0.5); }
+        .block p:last-child { margin-bottom: 0; }
+        .note {
+            font-style: italic;
+            color: var(--color-text-secondary);
+            padding-top: calc(var(--space-unit) * 2);
+            border-top: 1px solid var(--color-border);
+            margin-top: calc(var(--space-unit) * 3);
+        }
+        .portrait {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            margin-bottom: calc(var(--space-unit) * 3);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.25rem;
+            color: var(--color-text);
+        }
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: currentColor;
+            margin: 5px 0;
+            transition: all 0.2s;
+        }
+
+        @media (max-width: 900px) {
+            .col-left {
+                position: relative;
+                top: auto; left: auto;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--color-border);
+                padding: calc(var(--space-unit) * 4) calc(var(--space-unit) * 2);
+            }
+            .col-right {
+                margin-left: 0;
+                width: 100%;
+                padding: calc(var(--space-unit) * 4) calc(var(--space-unit) * 2);
+            }
+            .nav-inner { padding: 0 calc(var(--space-unit) * 2); }
+            body { font-size: 1.125rem; }
+            .portrait { width: 100px; height: 100px; }
+            .nav-toggle { display: block; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0; right: 0;
+                background: var(--color-bg);
+                border-bottom: 1px solid var(--color-border);
+                flex-direction: column;
+                gap: 0;
+                padding: calc(var(--space-unit) * 1) 0;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links li { width: 100%; }
+            .nav-links a {
+                display: block;
+                font-size: 0.875rem;
+                padding: calc(var(--space-unit) * 0.75) calc(var(--space-unit) * 2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">Stephan Wilk</a>
+            <button class="nav-toggle" aria-label="Menü" onclick="this.nextElementSibling.classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/resonanzraeume">Resonanzräume</a></li>
+                <li><a href="/ueber-mich" class="active">Über mich</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="col-left">
+            <p class="page-label">Über mich</p>
+            
+            <img src="stephan-wilk.png" alt="Stephan Wilk" class="portrait">
+            
+            <div class="block">
+                <p>Stephan Wilk, geboren 1965 in Zürich,<br>
+                arbeitet als strategischer Berater und Creative Director.</p>
+            </div>
+            
+            <div class="block">
+                <p>Seine Arbeit bewegt sich zwischen Popkultur, Philosophie<br>
+                und persönlicher Erfahrung.</p>
+            </div>
+        </div>
+        
+        <div class="col-right">
+            <div class="block">
+                <p>Er interessiert sich für die Fragen,<br>
+                die sich nicht vollständig beantworten lassen.</p>
+                <p>Für das, was bleibt,<br>
+                wenn Systeme an ihre Grenzen kommen.</p>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="block">
+                <p>Inspiriert von Roland Barthes und Douglas Coupland<br>
+                verbindet er essayistische Denkweise<br>
+                mit zeitgenössischer Kultur.</p>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="block">
+                <p>Neben seiner Tätigkeit als Berater ist er Vinyl-DJ<br>
+                und Co-Host einer Musiktalk-Sendung.</p>
+            </div>
+            
+            <p class="note">
+                Dieses Projekt ist kein Produkt.<br>
+                Es ist ein Denkraum.
+            </p>
+        </div>
+    </main>
+</body>
+</html>
